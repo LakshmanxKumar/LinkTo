@@ -35,7 +35,8 @@ public class LinkToController {
 	
 	@GetMapping()
 	public ResponseEntity<String> getHelp(){
-		String help="https://github.com/LakshmanxKumar/LinkTo/blob/master/README.md";
+		String help="<html><head><script>window.location.href=\"https://github.com/LakshmanxKumar/LinkTo/blob/master/README.md\"</script></head><body></body></html>";
+//		String help="https://github.com/LakshmanxKumar/LinkTo/blob/master/README.md";
 		return new ResponseEntity<String>(help,HttpStatus.OK) ;
 	}
 		
