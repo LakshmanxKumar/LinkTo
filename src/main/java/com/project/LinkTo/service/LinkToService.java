@@ -19,6 +19,15 @@ public class LinkToService {
 	LinkToService(LinkToRepo repository){
 		this.repository=repository;
 	}
+		
+	public LongLink findLink(String id) {
+		Optional<LongLink> ans= this.repository.findById(id);
+		if(ans.isPresent()) {return ans.get();}else {
+			return new LongLink("-1","Not Found");
+		}
+	}
+	
+	
 	
 	public  String addToDb(RecivedLink userInput) {
 		if(userInput.isValid()) {
@@ -27,6 +36,7 @@ public class LinkToService {
 		boolean wantsRandomId=userInput.getRandomIdAssignment();
 		if(customLink!=null) {
 			String assign=userInput.getCustomString();
+			if(assign.isEmpty()) {return "Empty String are not accepted";}
 			Optional<LongLink> found= repository.findById(assign); 
 			if(found.isEmpty()) {
 			LongLink insertDoc=new LongLink(assign,userInput.getLongLink());			
@@ -76,7 +86,7 @@ public class LinkToService {
 	
 	private String generateRandomId() {
 		 Random random = new Random();
-		 Integer generatedId= random.nextInt(10000)+1000;
+		 Integer generatedId= random.nextInt(9000)+1000;
 		 return generatedId.toString();
 		
 	}

@@ -1,7 +1,0 @@
-com\project\LinkTo\LinkToApplication.class
-com\project\LinkTo\service\LinkToService.class
-com\project\LinkTo\model\ShortLink.class
-com\project\LinkTo\controller\LinkToController.class
-com\project\LinkTo\repo\LinkToRepo.class
-com\project\LinkTo\model\LongLink.class
-com\project\LinkTo\model\RecivedLink.class
