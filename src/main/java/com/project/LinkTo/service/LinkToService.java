@@ -23,7 +23,7 @@ public class LinkToService {
 	public LongLink findLink(String id) {
 		Optional<LongLink> ans= this.repository.findById(id);
 		if(ans.isPresent()) {return ans.get();}else {
-			return new LongLink("-1","Not Found");
+			return new LongLink(id,"Not Found");
 		}
 	}
 	
