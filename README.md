@@ -5,7 +5,7 @@ It takes a get request to receive the longlink from the database<br>
 end-point for get request `/goto/{id}`
 
 It takes a post request to save the long URL<br>
-end-point for post request `/post`
+end-point for post request `/savelink`
 
 
 Sample for the post-request  
