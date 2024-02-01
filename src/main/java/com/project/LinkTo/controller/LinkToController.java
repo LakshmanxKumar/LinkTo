@@ -40,8 +40,15 @@ public class LinkToController {
 		String help="<html><head><script>window.location.href=\"https://github.com/LakshmanxKumar/LinkTo/blob/master/README.md\"</script></head><body></body></html>";
 		return new ResponseEntity<String>(help,HttpStatus.OK) ;
 	}
-	
+
 	@GetMapping("goto/{id}")
+	public ResponseEntity<String> redirector(@PathVariable String id){
+		String longLink=service.findLink(id).getLongLink();
+		String redirectLink="<html><head><script>window.location.href=\""+longLink+"\"</script></head><body></body></html>\"";
+		return new ResponseEntity<String>(redirectLink,HttpStatus.OK);
+	}
+	
+	@GetMapping("get/{id}")
 	public ResponseEntity<LongLink> getLongLink(@PathVariable String id){
 		LongLink ans= service.findLink(id);
 		return new ResponseEntity<LongLink>(ans,HttpStatus.OK);

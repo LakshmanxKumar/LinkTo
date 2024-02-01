@@ -2,7 +2,9 @@
 This is an API for generating short links.
 
 It takes a get request to receive the longlink from the database<br>
-end-point for get request `/goto/{id}`
+end-point for get request `/get/{id}`
+
+To use the api for redirecting to different link make a get request to `/goto/{id}`
 
 It takes a post request to save the long URL<br>
 end-point for post request `/savelink`
